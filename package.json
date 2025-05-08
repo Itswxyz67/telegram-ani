@@ -1,0 +1,16 @@
+{
+  "name": "telegram-ani",
+  "version": "1.0.0",
+  "description": "A Telegram bot for fetching anime information using Jikan API on Cloudflare Workers",
+  "main": "bot.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "set-webhook": "curl -X GET https://telegram-anime-bot.<your-subdomain>.workers.dev/setWebhook"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/wrangler": "^3.0.0"
+  }
+}

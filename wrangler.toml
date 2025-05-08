@@ -1,0 +1,25 @@
+name = "telegram-ani"
+main = "bot.js"
+compatibility_date = "2025-05-08"
+
+# Define the environment variable for the Telegram Bot Token
+[vars]
+BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+
+# Define a route for the worker
+[[routes]]
+pattern = "your-custom-domain.com/*"
+zone_name = "your-custom-domain.com"
+
+# Optional: Add a dev environment for local testing
+[env.dev]
+name = "telegram-anime-bot-dev"
+[env.dev.vars]
+BOT_TOKEN = "YOUR_DEV_BOT_TOKEN_HERE"
+
+# Optional: Rate limiting to respect Jikan API limits (60 req/min, 3 req/sec)
+# Note: This is a Cloudflare feature, not directly related to Jikan API
+[rate_limit]
+match = { request = { method = "POST", path = "/webhook" } }
+limit = 3
+period = 1
